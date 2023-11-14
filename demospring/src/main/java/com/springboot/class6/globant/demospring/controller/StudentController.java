@@ -1,5 +1,6 @@
 package com.springboot.class6.globant.demospring.controller;
 
+import com.springboot.class6.globant.demospring.entity.Student;
 import com.springboot.class6.globant.demospring.service.IStudentService;
 import com.springboot.class6.globant.demospring.service.IStudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class StudentController {
     }
 
     @GetMapping("/getall")
-    public ResponseEntity<List<String>> getAllStudents() {
-        List<String> allStudents = studentService.getAllStudents();
+    public ResponseEntity<List<Student>> getAllStudents() {
+        List<Student> allStudents = studentService.getAllStudents();
 
         return new ResponseEntity<>(allStudents, HttpStatus.OK);
     }
